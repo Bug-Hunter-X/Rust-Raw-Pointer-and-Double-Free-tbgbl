@@ -1,0 +1,3 @@
+This repository demonstrates a potential double free error in Rust when using raw pointers.  The `bug.rs` file contains code that creates a raw pointer to a vector and modifies the vector's content through the pointer. However, simply dropping the vector doesn't prevent future access through the raw pointer. This can lead to undefined behavior, including memory corruption and program crashes.
+
+The `bugSolution.rs` file provides a corrected version, using `Box` for memory management and safe operations to avoid the issues encountered in `bug.rs`.
